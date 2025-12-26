@@ -104,18 +104,6 @@ To install Git, follow these steps:
     sudo yum install git -y
     ```
 
-### Additional Configuration
-
-To allow Jenkins to interact with Docker, execute the following command:
-
-```bash
-sudo usermod -aG docker jenkins
-```
-After executing the above command, restart Jenkins:
-
-```bash
-sudo systemctl restart jenkins
-```
 
 ## Pipeline Overview
 
@@ -139,7 +127,7 @@ To get started with this CI/CD pipeline, follow the steps below:
 3. Configure Jenkins by accessing its web interface.
 4. Create a new Jenkins job and configure it as follows:
    - Set the job type to "Freestyle Project".
-   - Connect it to your GitHub repository (https://github.com/harshartz/Jenkins-project.git) and configure the webhook.
+   - Connect it to your GitHub repository and configure the webhook.
    - Select "GitHub hook trigger for GITScm polling" as the build trigger.
    - Add an "Execute Shell" build step to the pipeline and use the following code:
    ```bash
@@ -155,8 +143,6 @@ To get started with this CI/CD pipeline, follow the steps below:
     fi
     ```
 Run the Jenkins job and verify the successful execution of the pipeline.
-
-![Screenshot (11)](https://github.com/harshartz/Jenkins-project/assets/130890384/1ffd9035-951d-4ced-89a2-84b6c5c7f6e0)
 
 *Application is running, and whenever a developer commits changes to the GitHub repository, it will automatically get deployed to the application.*
 
